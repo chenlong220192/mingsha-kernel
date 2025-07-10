@@ -12,8 +12,8 @@ import java.util.Enumeration;
 import java.util.regex.Pattern;
 
 /**
- * @author Ming Sha
- * @create: 2020-05-27 22:25
+ * @author mingsha
+ * @date: 2025-07-10
  */
 public class IpUtils {
 
@@ -26,9 +26,13 @@ public class IpUtils {
     private static volatile InetAddress LOCAL_ADDRESS   = null;
 
     /**
-     * Find first valid IP from local network card
-     *
-     * @return first valid local IP
+     * 工具类构造方法私有化，防止实例化
+     */
+    private IpUtils() {}
+
+    /**
+     * 获取本地第一个有效IP
+     * @return 本地IP地址，找不到返回null
      */
     public static InetAddress getLocalAddress() {
         if (LOCAL_ADDRESS != null) {
@@ -40,8 +44,7 @@ public class IpUtils {
     }
 
     /**
-     * get ip address
-     *
+     * 获取IP地址
      * @return String
      */
     public static String getIp() {
@@ -49,8 +52,7 @@ public class IpUtils {
     }
 
     /**
-     * get ip:port
-     *
+     * 获取IP:端口
      * @param port
      * @return String
      */
@@ -115,7 +117,7 @@ public class IpUtils {
     }
 
     /**
-     * valid Inet4Address
+     * 验证Inet4Address
      *
      * @param address
      * @return
@@ -130,18 +132,18 @@ public class IpUtils {
     }
 
     /**
-     * normalize the ipv6 Address, convert scope name to scope id.
-     * e.g.
-     * convert
+     * 规范化IPv6地址，将范围名称转换为范围ID。
+     * 例如：
+     * 转换
      * fe80:0:0:0:894:aeec:f37d:23e1%en0
-     * to
+     * 到
      * fe80:0:0:0:894:aeec:f37d:23e1%5
      * <p>
-     * The %5 after ipv6 address is called scope id.
-     * see java doc of {@link Inet6Address} for more details.
+     * 地址中的%5称为范围ID。
+     * 有关更多详细信息，请参见 {@link Inet6Address} 的Java文档。
      *
-     * @param address the input address
-     * @return the normalized address, with scope id converted to int
+     * @param address 输入地址
+     * @return 规范化地址，范围ID转换为int
      */
     private static InetAddress normalizeV6Address(Inet6Address address) {
         String addr = address.getHostAddress();

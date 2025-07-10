@@ -10,8 +10,8 @@ import java.util.Locale;
 import java.util.Objects;
 
 /**
- * @author Ming Sha
- * @create: 2025-03-17 20:10
+ * @author mingsha
+ * @date: 2025-07-10
  */
 public class WeekUtils {
 
@@ -26,17 +26,21 @@ public class WeekUtils {
     public static final DayOfWeek SATURDAY = DayOfWeek.SATURDAY;
     public static final DayOfWeek SUNDAY = DayOfWeek.SUNDAY;
 
+    /**
+     * 工具类构造方法私有化，防止实例化
+     */
+    private WeekUtils() {}
+
     //-------------------------- 新增快捷方法 --------------------------
 
     /**
      * 判断是否是周末（周六或周日）
-     *
      * @param date 日期对象（不可为空）
+     * @return 是周末返回true，否则false
      */
     public static boolean isWeekend(LocalDate date) {
         logger.debug("判断日期 [{}] 是否是周末", date);
         Objects.requireNonNull(date, "日期参数不能为null");
-
         DayOfWeek day = date.getDayOfWeek();
         boolean result = day == SATURDAY || day == SUNDAY;
         logger.debug("日期 [{}] 周末判断结果: {}", date, result);

@@ -3,10 +3,8 @@ package site.mingsha.kernel.model.response;
 import java.io.Serializable;
 
 /**
- * 响应模版
- *
- * @author Ming Sha
- * @create: 2020-05-21 17:49
+ * 通用响应DTO
+ * @author mingsha
  */
 public class ResponseDTO<T> implements Serializable {
 

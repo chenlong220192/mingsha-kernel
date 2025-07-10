@@ -6,8 +6,8 @@ import site.mingsha.kernel.core.limit.MingshaRateLimiter;
 import java.util.List;
 
 /**
- * @author Ming Sha
- * @date 2024-12-03
+ * MingshaRateLimiter 限流工具单元测试
+ * @author mingsha
  */
 public class MingshaRateLimiterTest {
 

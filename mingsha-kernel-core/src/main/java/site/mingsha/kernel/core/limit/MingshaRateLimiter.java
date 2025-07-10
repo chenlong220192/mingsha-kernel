@@ -3,8 +3,8 @@ package site.mingsha.kernel.core.limit;
  import java.util.concurrent.atomic.AtomicLong;
 
  /**
-  * @author Ming Sha
-  * @create: 2020-05-25 23:19
+  * @author mingsha
+  * @date: 2025-07-10
   */
  public class MingshaRateLimiter {
 
@@ -27,29 +27,42 @@ package site.mingsha.kernel.core.limit;
      }
 
      /**
-      * 尝试获取令牌。
+      * 尝试获取令牌（高并发无锁版）。
       * @return 如果成功获取令牌返回 true，否则返回 false。
       */
-     public synchronized boolean tryAcquire() {
+     public boolean tryAcquire() {
          refillTokensIfNeeded();
-         if (availableTokens.get() > 0) {
-             availableTokens.decrementAndGet();
-             return true;
+         while (true) {
+             long current = availableTokens.get();
+             if (current <= 0) {
+                 return false;
+             }
+             if (availableTokens.compareAndSet(current, current - 1)) {
+                 return true;
+             }
          }
-         return false;
      }
 
      /**
-      * 补充令牌（如果需要）。
+      * 补充令牌（高并发下防止重复补充）。
       */
      private void refillTokensIfNeeded() {
          long now = System.currentTimeMillis();
-         long lastRefill = lastRefillTime.get();
-         if (now - lastRefill >= refillIntervalMillis) {
+         while (true) {
+             long lastRefill = lastRefillTime.get();
+             if (now - lastRefill < refillIntervalMillis) {
+                 return;
+             }
              long elapsedIntervals = (now - lastRefill) / refillIntervalMillis;
              long tokensToAdd = elapsedIntervals * refillTokens;
-             availableTokens.set(Math.min(capacity, availableTokens.get() + tokensToAdd));
-             lastRefillTime.set(lastRefill + elapsedIntervals * refillIntervalMillis);
+             long currentTokens = availableTokens.get();
+             long newTokens = Math.min(capacity, currentTokens + tokensToAdd);
+             if (availableTokens.compareAndSet(currentTokens, newTokens)) {
+                 long newRefillTime = lastRefill + elapsedIntervals * refillIntervalMillis;
+                 lastRefillTime.compareAndSet(lastRefill, newRefillTime);
+                 return;
+             }
+             // 有并发冲突，重试
          }
      }
 

@@ -1,8 +1,12 @@
 package site.mingsha.kernel.logger.pattern;
 
 /**
- * @author Ming Sha
- * @create: 2020-05-27 13:57
+ * 日志格式常量接口
+ * <p>
+ * 推荐使用INFO/ERROR/WARN等常量，详见各字段注释。
+ * </p>
+ * @author mingsha
+ * @date: 2025-07-10
  */
 public interface LogPattern {
 

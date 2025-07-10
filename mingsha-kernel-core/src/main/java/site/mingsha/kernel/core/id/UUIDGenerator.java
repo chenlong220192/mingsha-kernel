@@ -3,8 +3,8 @@ package site.mingsha.kernel.core.id;
 import java.util.UUID;
 
 /**
- * @author Ming Sha
- * @create: 2020-05-25 23:08
+ * @author mingsha
+ * @date: 2025-07-10
  */
 public class UUIDGenerator {
 

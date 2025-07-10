@@ -1,8 +1,8 @@
 package site.mingsha.kernel.core.exception;
 
 /**
- * @author Ming Sha
- * @create: 2020-05-21 19:56
+ * @author mingsha
+ * @date: 2025-07-10
  */
 public class BizException extends RuntimeException {
 

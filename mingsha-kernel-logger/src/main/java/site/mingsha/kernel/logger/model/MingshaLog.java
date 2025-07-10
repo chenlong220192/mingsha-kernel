@@ -3,8 +3,8 @@ package site.mingsha.kernel.logger.model;
 /**
  * 日志封装器
  *
- * @author Ming Sha
- * @create: 2020-05-20 16:52
+ * @author mingsha
+ * @date: 2025-07-10
  */
 public class MingshaLog {
 
@@ -14,6 +14,11 @@ public class MingshaLog {
     private String subCategory;
     private String filter1;
     private String message;
+
+    /**
+     * 工具类构造方法私有化，防止实例化
+     */
+    private MingshaLog() {}
 
     /**
      * 构造器

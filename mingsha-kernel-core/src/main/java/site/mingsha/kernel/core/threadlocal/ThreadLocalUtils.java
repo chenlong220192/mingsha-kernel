@@ -6,10 +6,15 @@ import java.util.Objects;
 
 /**
  *
- * @author Ming Sha
- * @create: 2020-06-11
+ * @author mingsha
+ * @date: 2025-07-10
  */
 public class ThreadLocalUtils {
+
+    /**
+     * 工具类构造方法私有化，防止实例化
+     */
+    private ThreadLocalUtils() {}
 
     /**
      *
@@ -17,8 +22,8 @@ public class ThreadLocalUtils {
     private static final ThreadLocal<Map<String, Object>> THREAD_LOCAL = new ThreadLocal<Map<String, Object>>();
 
     /**
-     *
-     * @param context
+     * 初始化ThreadLocal上下文
+     * @param context 上下文Map
      */
     public static void init(Map<String, Object> context) {
         THREAD_LOCAL.set(context);

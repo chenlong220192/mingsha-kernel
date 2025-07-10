@@ -3,8 +3,8 @@ package site.mingsha.kernel.core.utils;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * @author Ming Sha
- * @create: 2020-05-20 16:14
+ * @author mingsha
+ * @date: 2025-07-10
  */
 public class RegexUtils {
 

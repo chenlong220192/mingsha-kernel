@@ -5,10 +5,15 @@ import java.util.concurrent.*;
 /**
  * 线程池创建工具
  *
- * @author Ming Sha
- * @create: 2020-05-21 17:49
+ * @author mingsha
+ * @date: 2025-07-10
  */
 public class MingshaThreadPool {
+
+    /**
+     * 工具类构造方法私有化，防止实例化
+     */
+    private MingshaThreadPool() {}
 
     /* ---------------------------- 拿来即用线程池 -------------------------------- */
 

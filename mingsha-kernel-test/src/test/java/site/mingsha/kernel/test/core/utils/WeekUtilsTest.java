@@ -16,8 +16,8 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * @author Ming Sha
- * @date 2025-03-12
+ * WeekUtils 工具类单元测试
+ * @author mingsha
  */
 public class WeekUtilsTest {
 

@@ -20,18 +20,17 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--  -->
         <jdk.version>1.8</jdk.version>
-        <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
-        <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
         <!--  -->
         <junit-jupiter.version>5.12.0</junit-jupiter.version>
         <!--  -->
-        <commons-lang3.version>3.17.0</commons-lang3.version>
-        <commons-beanutils.version>1.10.1</commons-beanutils.version>
-        <commons-collections4.version>4.5.0-M3</commons-collections4.version>
+        <commons-lang3.version>3.14.0</commons-lang3.version>
+        <commons-collections4.version>4.4</commons-collections4.version>
         <guava.version>33.4.0-jre</guava.version>
-        <slf4j.version>2.0.17</slf4j.version>
-        <fastjson2.version>2.0.56</fastjson2.version>
+        <slf4j.version>2.0.13</slf4j.version>
+        <fastjson2.version>2.0.57</fastjson2.version>
         <okhttp.version>4.12.0</okhttp.version>
     </properties>
 
@@ -88,11 +87,6 @@
             </dependency>
 
             <!-- 第三方 -->
-            <dependency>
-                <groupId>commons-beanutils</groupId>
-                <artifactId>commons-beanutils</artifactId>
-                <version>${commons-beanutils.version}</version>
-            </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>

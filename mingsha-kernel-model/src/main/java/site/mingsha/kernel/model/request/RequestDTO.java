@@ -3,10 +3,8 @@ package site.mingsha.kernel.model.request;
 import java.io.Serializable;
 
 /**
- * 基础请求参数封装
- *
- * @author Ming Sha
- * @create: 2020-05-21 17:49
+ * 通用请求DTO
+ * @author mingsha
  */
 public class RequestDTO implements Serializable {
     

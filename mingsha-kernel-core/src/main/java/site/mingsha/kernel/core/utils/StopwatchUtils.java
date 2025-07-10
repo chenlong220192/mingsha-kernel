@@ -4,8 +4,8 @@ package site.mingsha.kernel.core.utils;
 import com.google.common.base.Stopwatch;
 
 /**
- * @author Ming Sha
- * @create: 2025-03-17 20:10
+ * @author mingsha
+ * @date: 2025-07-10
  */
 public class StopwatchUtils {
 

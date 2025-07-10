@@ -1,8 +1,8 @@
 package site.mingsha.kernel.constants;
 
 /**
- * @author Ming Sha
- * @create: 2020-05-20 16:23
+ * 全局常量定义类
+ * @author mingsha
  */
 public interface MingshaConstants {
 }

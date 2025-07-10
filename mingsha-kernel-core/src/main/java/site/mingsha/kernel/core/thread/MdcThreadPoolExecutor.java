@@ -13,8 +13,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.MDC;
 
 /**
- * @author Ming Sha
- * @create: 2020-05-21 18:20
+ * @author mingsha
+ * @date: 2025-07-10
  */
 public class MdcThreadPoolExecutor extends ThreadPoolExecutor {
 
@@ -253,8 +253,8 @@ public class MdcThreadPoolExecutor extends ThreadPoolExecutor {
     /**
      * 生成线程池所用的线程，只是改写了线程池默认的线程工厂，传入线程池名称，便于问题追踪
      *
-     * @author Ming Sha
-     * @create: 2020-06-11
+     * @author mingsha
+     * @date: 2025-06-11
      */
     public static class EventThreadFactory implements ThreadFactory {
 

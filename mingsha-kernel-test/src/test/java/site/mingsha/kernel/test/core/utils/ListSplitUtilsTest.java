@@ -9,8 +9,8 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * @author Ming Sha
- * @date 2020-06-17
+ * ListSplitUtils 工具类单元测试
+ * @author mingsha
  */
 public class ListSplitUtilsTest {
 

@@ -5,16 +5,21 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * @author Ming Sha
- * @create: 2020-05-21 20:10
+ * @author mingsha
+ * @date: 2025-07-10
  */
 public class ValidateUtils {
 
     /**
-     * 对象是否为空
+     * 工具类构造方法私有化，防止实例化
+     */
+    private ValidateUtils() {}
+
+    /**
+     * 判断对象是否为空
      *
-     * @param o
-     * @return
+     * @param o 待判断对象
+     * @return 为空返回true，否则false
      */
     public static boolean isEmpty(Object o) {
         if (o == null) {

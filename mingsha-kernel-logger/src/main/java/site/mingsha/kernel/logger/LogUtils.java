@@ -17,8 +17,8 @@ import java.util.UUID;
  * category 缺省值为类名
  * subCategory 缺省值为方法名
  *
- * @author Ming Sha
- * @create: 2020-05-20 16:52
+ * @author mingsha
+ * @date: 2025-07-10
  */
 public class LogUtils {
 
@@ -32,6 +32,11 @@ public class LogUtils {
     private static final String FILTER1 = "filter1";
 
     private static final String PATTERN = "[%s][%s][%s][%s][%s]%s";
+
+    /**
+     * 工具类构造方法私有化，防止实例化
+     */
+    private LogUtils() {}
 
     /**
      *

@@ -6,22 +6,35 @@
 package site.mingsha.kernel.core.utils;
 
 import java.security.MessageDigest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * @author Ming Sha
- * @create: 2020-05-20 16:14
+ * @author mingsha
+ * @date: 2025-07-10
  */
 public class Md5Utils {
 
+    private static final Logger logger = LoggerFactory.getLogger(Md5Utils.class);
+
     /**
-     * 
-     * 
-     * @param laintext
-     * @return
-     * @throws RuntimeException
+     * 工具类构造方法私有化，防止实例化
+     */
+    private Md5Utils() {}
+
+    /**
+     * 计算字符串的MD5值
+     *
+     * @param laintext 明文字符串
+     * @return MD5值
+     * @throws RuntimeException 加密失败时抛出
      */
     public static String MD5(String laintext) throws RuntimeException {
-        String re_md5 = new String();
+        if (laintext == null) {
+            logger.warn("MD5参数为null");
+            return null;
+        }
+        String re_md5 = "";
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
             md.update(laintext.getBytes("UTF-8"));
@@ -44,7 +57,8 @@ public class Md5Utils {
             re_md5 = buf.toString();
 
         } catch (Exception e) {
-            throw new RuntimeException("MD5 加密失败");
+            logger.error("Md5Utils.MD5加密失败", e);
+            throw new RuntimeException("MD5 加密失败: " + e.getMessage(), e);
         }
         return re_md5;
     }
