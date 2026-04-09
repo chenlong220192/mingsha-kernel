@@ -14,7 +14,7 @@
 
     <properties>
         <!-- Version -->
-        <revision>2025.04.08.01</revision>
+        <revision>2026.04.09-01</revision>
         <flatten-maven-plugin.version>1.7.0</flatten-maven-plugin.version>
         <!-- Encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
